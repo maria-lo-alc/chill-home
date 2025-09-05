@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  justify-content:space-between;
+}
+
+.menu {
+    display: flex;
+  justify-content:space-between;
+  align-items: center; 
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 1em;
+    cursor: pointer; 
+
+}
+
+.logo {
+    height: 6em;
+    padding:1.5em;
+}

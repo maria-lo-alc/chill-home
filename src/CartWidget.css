@@ -1,0 +1,9 @@
+.cartcontainer {
+    display: flex;
+    align-items: center; 
+}
+
+.basketimg {
+    height: 2em;
+    margin: 0 0.5em;
+}
