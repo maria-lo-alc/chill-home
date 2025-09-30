@@ -1,0 +1,66 @@
+* Contenedor principal de cada producto */
+.item-card {
+  width: 250px; /* Ancho fijo para las tarjetas */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 15px; /* Espacio interno */
+  margin: 15px; /* Margen para separar las tarjetas */
+  display: flex; /* Usamos flexbox para organizar el contenido */
+  flex-direction: column; /* Apilamos los elementos verticalmente */
+  align-items: center; /* Centramos los elementos horizontalmente */
+  transition: transform 0.3s ease-in-out; /* Transición para el efecto de hover */
+}
+
+/* Efecto al pasar el cursor por encima */
+.item-card:hover {
+  transform: translateY(-5px); /* Se eleva ligeramente la tarjeta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* La sombra se intensifica */
+}
+
+/* Estilos para la imagen del producto */
+.item-card-img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: 200px; /* Altura fija para la imagen */
+  object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+  border-radius: 5px; /* Bordes redondeados para la imagen */
+  margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+/* Estilos para el título del producto */
+.item-card-title {
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Título en negrita */
+  color: #333; /* Color de texto oscuro */
+  text-align: center; /* Centramos el texto del título */
+  margin-top: 0; /* Eliminamos el margen superior por defecto */
+  margin-bottom: 5px; /* Espacio debajo del título */
+  white-space: nowrap; /* Evita que el texto se salte de línea */
+  overflow: hidden; /* Oculta cualquier texto que se desborde */
+  text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+}
+
+/* Estilos para el precio del producto */
+.item-card-price {
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande */
+  color: #007bff; /* Color azul para el precio */
+  font-weight: 600; /* Negrita para destacar el precio */
+  margin-top: 10px; /* Espacio arriba del precio */
+}
+
+.item-card-button {
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Color del texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a una mano */
+  margin-top: 10px; /* Margen superior para separarlo del precio */
+  transition: background-color 0.3s ease; /* Transición para el efecto de hover */
+}
+
+/* Efecto al pasar el cursor por encima del botón */
+.item-card-button:hover {
+  background-color: #0056b3; /* Un azul un poco más oscuro */
+}
