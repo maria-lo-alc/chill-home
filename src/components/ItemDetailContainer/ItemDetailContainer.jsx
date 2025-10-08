@@ -14,14 +14,16 @@ import { cartContext } from "../../context/cartContext"
         getProductById(idParam).then (response => setProduct(response))
         .catch (error=> console.log(error))
     }, [])
+       const handleOnAdd = (quantity) => {
+        addItem(product, quantity);
+    };
     if (product.loading) { return (<h2>Cargando</h2>);}
     return ( <div className= "item-card"> 
     <img className="item-card-img" src={product.img} alt={product.title} />
     <h3 className="item-card-title">{product.title}</h3>
     <p className="item-card-price">{product.price}</p> 
     <p style={{ fontSize: "12px", opacity: "0.6"}}>{product.description}</p>
-    <ItemCount/>
-    <button className="item-card-button" onClick= {()=>addItem(product)}>Agregar al carrito</button>
+    <ItemCount onAdd={handleOnAdd}/>
     </div>
     )
 }

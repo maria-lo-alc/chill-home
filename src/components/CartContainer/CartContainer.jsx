@@ -1,15 +1,16 @@
 import { useContext } from "react"
 import { cartContext } from "../../context/cartContext" 
 import { Link } from "react-router"
+import ItemListContainer from "../ItemListContainer/ItemListContainer"
 
 function CartContainer () {
-    const {cartItems, removeItem }= useContext (cartContext)
+    const {cartItems, removeItem, getTotalPrice, clearCart }= useContext (cartContext)
 
     if (cartItems.length === 0) {
         return (
             <div>
                 <h1>Tu carrito esta vacío</h1>
-                <button>Ir al inicio</button>
+                <Link to= "/"><button>Ir al inicio</button></Link>
             </div>)
         
     }
@@ -18,7 +19,7 @@ function CartContainer () {
         <section>
             <h1>Carrito</h1>
             <div>{
-            cartItems.map (itemInCart => <div>
+            cartItems.map (itemInCart => <div key={itemInCart.id} >
                 <h4>{itemInCart.title}</h4>
                 <img width="80" src={itemInCart.img} alt={itemInCart.title}/>
                <p>Precio por unidad: ${itemInCart.price}</p>
@@ -32,8 +33,8 @@ function CartContainer () {
           }
                 </div>
            <hr/>
-           <h4>Total a pagar:99 </h4>
-           <button> Vaciar carrito</button>
+           <h4>Total a pagar:{getTotalPrice()} </h4>
+           <button onClick={clearCart}> Vaciar carrito</button>
            <Link to="/checkout">
            <button>Finalizar compra</button>
            </Link>
