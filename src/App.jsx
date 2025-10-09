@@ -6,9 +6,9 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter,Routes, Route } from 'react-router'
 import  {CartProvider}   from './context/cartContext'
 import CartContainer from './components/CartContainer/CartContainer'
-import app from './data/firebase'
+
 function App() {
-  console.log(app);
+
 
   return (
     <main>

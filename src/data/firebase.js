@@ -1,6 +1,7 @@
 
 import { initializeApp } from "firebase/app";
-
+import { getFirestore } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyC3zhTqkkpYhkN_Tri6WwgL89KvRDzYmfE",
   authDomain: "chill-home-31979.firebaseapp.com",
@@ -12,5 +13,15 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
+const db= getFirestore(app);
+
+export async function getProducts() {
+    const productsRef = collection(db, "products");
+    const productsSnapshot = await getDocs(productsRef);
+    const dataDocs = productsSnapshot.docs.map(doc => {
+        return {id: doc.id, ...doc.data()}
+    })
+    return dataDocs;
+}
 
 export default app;

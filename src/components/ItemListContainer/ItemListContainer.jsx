@@ -1,4 +1,5 @@
-import getProducts, { getProductByCategory } from "../../data/mockAPI";
+import  { getProductByCategory } from "../../data/mockAPI";
+import {getProducts} from "../../data/firebase";
 import Item from "./Item";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
