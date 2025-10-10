@@ -1,5 +1,5 @@
-import  { getProductByCategory } from "../../data/mockAPI";
-import {getProducts} from "../../data/firebase";
+
+import {getProducts, getProductsByCategory} from "../../data/firebase";
 import Item from "./Item";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
@@ -17,11 +17,11 @@ useEffect( ()=>{
 
     }).catch( (error) => alert(`Error ${error}`))
   } else {
-    getProductByCategory(categoryParam).then (response => setProducts(response))
-  }
-
-  }
-    , [categoryParam])
+    getProductsByCategory(categoryParam)
+    .then (response => setProducts(response)).catch( err => alert(err))
+            
+    }
+}, [categoryParam])
 
     return (
         <section>

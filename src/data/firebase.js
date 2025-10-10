@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, where, query, getDoc, getFirestore, addDoc} from "firebase/firestore";
+import  products  from "./products";
 const firebaseConfig = {
   apiKey: "AIzaSyC3zhTqkkpYhkN_Tri6WwgL89KvRDzYmfE",
   authDomain: "chill-home-31979.firebaseapp.com",
@@ -23,5 +23,34 @@ export async function getProducts() {
     })
     return dataDocs;
 }
+
+export async function getProductById(idParam){
+  const docRef = doc(db, "products", idParam);
+  const documentSnapshot = await getDoc(docRef);
+  return { id: documentSnapshot.id, ...documentSnapshot.data() };
+}
+
+export async function getProductsByCategory(categoryParam){
+  const productsRef = collection(db, "products");
+  const q = query( productsRef, where("category", "==", categoryParam) );
+  const productsSnapshot = await getDocs(q);
+  const documentsData = productsSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+  return documentsData;
+}
+
+export async function createOrder(orderData){
+  const ordersRef = collection (db, "orders");
+const newDoc = await addDoc(ordersRef, orderData);
+return newDoc;
+};
+
+
+export async function subirProductosAFirestore () {
+  for(let item of products){
+    const newDoc = await addDoc(collection(db, "products"), item)
+    console.log ("Documento creado con ID:", newDoc.id)
+  }
+};
+
 
 export default app;

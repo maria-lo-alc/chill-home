@@ -1,6 +1,6 @@
  
  import { useParams } from "react-router"
- import { getProductById } from "../../data/mockAPI"
+ import {getProductById} from "../../data/firebase"
  import { useState, useEffect } from "react"
 import { cartContext } from "../../context/cartContext"
  import { useContext } from "react"
@@ -19,7 +19,7 @@ import { cartContext } from "../../context/cartContext"
     };
     if (product.loading) { return (<h2>Cargando</h2>);}
     return ( <div className= "item-card"> 
-    <img className="item-card-img" src={product.img} alt={product.title} />
+    <img className="item-card-img" src={product.img} alt={product.imgalt} />
     <h3 className="item-card-title">{product.title}</h3>
     <p className="item-card-price">{product.price}</p> 
     <p style={{ fontSize: "12px", opacity: "0.6"}}>{product.description}</p>

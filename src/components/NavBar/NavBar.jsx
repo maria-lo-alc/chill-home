@@ -9,9 +9,10 @@ export default function NavBar() {
             </Link>
             
             <ul className="menu">
-                <Link to="/category/costura"><li>Costura</li></Link>
-                <Link to= "/category/manualidades"><li>Manualidades</li></Link>
-                <Link to= "/category/bordado"><li>Bordado</li></Link>
+                <Link to="/category/Salon"><li>Salon</li></Link>
+                <Link to= "/category/Dormitorio"><li>Dormitorio</li></Link>
+                <Link to= "/category/Comedor"><li>Comedor</li></Link>
+                <Link to= "/category/Banio"><li>Baño</li></Link>
                 
             </ul>
             <div className= "nav-cart">
