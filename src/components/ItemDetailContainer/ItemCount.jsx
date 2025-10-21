@@ -1,6 +1,8 @@
+
 import { useState } from 'react';
 
-function ItemCount({onAdd}) {
+
+function ItemCount({onAdd, onAddToast}) {
     const [count, setCount] = useState(1);
     
     function handleIncrement () {
@@ -22,7 +24,7 @@ function handleDecrement() {
        
             <button onClick={handleIncrement}> + </button>
           
-            <button  onClick={() => onAdd(count)} 
+            <button  onClick={() => { onAdd(count); onAddToast(count); }} 
                 disabled={count === 0}>Agregar al Carrito </button>
         </div>
     );

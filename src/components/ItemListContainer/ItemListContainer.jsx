@@ -24,10 +24,10 @@ useEffect( ()=>{
 }, [categoryParam])
 
     return (
-        <section>
+        <section >
             <h1>{props.greeting}</h1>
-            <p>Nuestros Productos</p>
-            <div className="item-list">
+            <p className="text-[#4682B4]" font-logo>Nuestros Productos</p>
+            <div className="grid grid-cols-3 gap-8 p-8">
       {
         products.map( function(item) 
         { return <Item 

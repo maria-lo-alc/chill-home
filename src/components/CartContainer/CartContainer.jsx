@@ -1,14 +1,13 @@
 import { useContext } from "react"
 import { cartContext } from "../../context/cartContext" 
-import { Link } from "react-router"
-import ItemListContainer from "../ItemListContainer/ItemListContainer"
+import { Form, Link } from "react-router"
 import { createOrder } from "../../data/firebase";
+import FormCheckOut from "./FormCheckout"
 
 function CartContainer () {
     const {cartItems, removeItem, getTotalPrice, clearCart }= useContext (cartContext)
 
-async function handleCheckOut () {
-    const buyer = { name: "Luciana", phone: "1234567", email: "lu@yahoo.com", adress: "Calle Falsa 123" }; 
+async function handleCheckOut (buyer) {
     const total= getTotalPrice();
    const newOrderconfirmed = await createOrder ({buyer, cartItems, total, date: new Date()})
    alert(`Gracias por tu compra! tu id de la orden es: ${newOrderconfirmed.id}`)
@@ -44,10 +43,9 @@ async function handleCheckOut () {
            <hr/>
            <h4>Total a pagar:{getTotalPrice()} </h4>
            <button onClick={clearCart}> Vaciar carrito</button>
-           <button onClick={handleCheckOut}> Confirmar Compra</button>
-           <Link to="/checkout">
-           <button>Finalizar compra</button>
-           </Link>
+           <FormCheckOut handleCheckOut={ handleCheckOut } />
+          
+           
 
             
         </section>
