@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { collection, getDocs, doc, where, query, getDoc, getFirestore, addDoc} from "firebase/firestore";
 import  products  from "./products";
 const firebaseConfig = {
-  apiKey: "AIzaSyC3zhTqkkpYhkN_Tri6WwgL89KvRDzYmfE",
-  authDomain: "chill-home-31979.firebaseapp.com",
-  projectId: "chill-home-31979",
-  storageBucket: "chill-home-31979.firebasestorage.app",
-  messagingSenderId: "633341569317",
-  appId: "1:633341569317:web:50c56abdb6af7f7b3492cc"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 

@@ -1,19 +1,25 @@
-import { useContext } from "react"
+import { useContext,useState } from "react"
 import { cartContext } from "../../context/cartContext" 
 import { Form, Link } from "react-router"
 import { createOrder } from "../../data/firebase";
 import FormCheckOut from "./FormCheckout"
+import Order from "./Order"
 
 function CartContainer () {
     const {cartItems, removeItem, getTotalPrice, clearCart }= useContext (cartContext)
+const [order, setOrder] = useState(null);
 
 async function handleCheckOut (buyer) {
     const total= getTotalPrice();
    const newOrderconfirmed = await createOrder ({buyer, cartItems, total, date: new Date()})
-   alert(`Gracias por tu compra! tu id de la orden es: ${newOrderconfirmed.id}`)
-    clearCart();
-}
 
+   setOrder(newOrderconfirmed); 
+    clearCart();
+   
+}
+if (order) {
+    return <Order orderData={order} />; 
+  }
     if (cartItems.length === 0) {
         return (
             <div>

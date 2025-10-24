@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:wght@400;700&display=swap');
 @import "tailwindcss";
-@import "tailwindcss/preflight"; 
+
 
 
 #root {
@@ -10,6 +10,22 @@
   padding: 10px 120px;
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@theme{
+   --color-mint-500: oklch(0.72 0.11 178);
+   --color-warning-stock:#D9B8C4;
+      --color-chill-blue:#4682B4;
+         --color-chill-blue-hover:#3A6A92;
+            --color-chill-price:#666;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
 
 
 

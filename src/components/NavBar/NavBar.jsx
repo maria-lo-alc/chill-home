@@ -3,7 +3,7 @@ import CartWidget from "./CartWidget"
 import { Link } from 'react-router'
 export default function NavBar() {
     return (
-        <nav className="w-full h-20 bg-white  flex items-center justify-between px-20 border-b">
+        <nav className=" w-full h-20 bg-white  flex items-center justify-between px-20 ">
             <Link to="/">
             <img className="h-9" src="/logo.png" alt="logo"></img>
             </Link>
@@ -12,19 +12,19 @@ export default function NavBar() {
                 
                 <Link 
                 to="/category/Salon"
-                className="display-block text-lg font-semibold text-[#222] hover:text-[#4682B4] transition duration-150">
+                className="font-['Open_Sans',_sans-serif] display-block text-lg font-semibold text-[#222] hover:text-[#4682B4] transition duration-150">
                     Salon</Link>
                 <Link 
                 to= "/category/Dormitorio"
-                className="display-block text-lg font-semibold text-[#222] hover:text-[#4682B4] transition duration-150" 
+                className="font-['Open_Sans',_sans-serif] display-block text-lg font-semibold text-[#222] hover:text-[#4682B4] transition duration-150" 
                 >Dormitorio</Link>
                 <Link 
                 to= "/category/Comedor" 
-                className="display-block text-lg font-semibold text-[#222] hover:text-[#4682B4] transition duration-150"
+                className="font-['Open_Sans',_sans-serif] display-block text-lg font-semibold text-[#222] hover:text-[#4682B4] transition duration-150"
                 >Comedor</Link>
                 <Link 
                 to= "/category/Banio" 
-                className="display-block text-lg font-semibold text-[#222] hover:text-[#4682B4] transition duration-150"
+                className="font-['Open_Sans',_sans-serif] display-block text-lg font-semibold text-[#222] hover:text-[#4682B4] transition duration-150"
                 >Baño</Link> 
                 
             </ul>

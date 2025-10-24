@@ -1,5 +1,4 @@
-import 'primereact/resources/primereact.min.css';
-import 'primereact/resources/themes/saga-green/theme.css';
+
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
@@ -19,10 +18,10 @@ function App() {
       <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route path= "/" element= { <ItemListContainer greeting="Bienvenidos a la tiendita"/>}/>
+        <Route path= "/" element= { <ItemListContainer />}/>
         <Route 
         path= "/detail/:idParam" 
-        element= {<ItemDetailContainer/>  }/>
+        element= {<ItemDetailContainer/> }/>
         <Route 
         path= "/category/:categoryParam"
         element = {<ItemListContainer greeting= "Categorias"/>}></Route>

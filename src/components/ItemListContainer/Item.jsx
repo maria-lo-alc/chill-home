@@ -6,9 +6,11 @@ import { useState } from 'react';
 function Item ({ id, title, img, price, description, imgalt, imghover, stock }) {
     const [isHovered, setIsHovered] = useState(false);
     return ( <div className="w-full bg-white overflow-hidden "
-            onMouseEnter={() => setIsHovered(true)} 
-            onMouseLeave={() => setIsHovered(false)} >
-   <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl">
+             >
+   <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl"
+   onMouseEnter={() => setIsHovered(true)} 
+            onMouseLeave={() => setIsHovered(false)}>
+
     <img 
                     src={img} 
                     alt={imgalt} 
@@ -22,12 +24,12 @@ function Item ({ id, title, img, price, description, imgalt, imghover, stock }) 
 
 
     </div> 
-    <div className= "flex justify-between ">
-    <h3 className="font-['Open_Sans',_sans-serif] text-xl font-bold italic text-[#222] mb-1 mt-1">{title}</h3>
-    <p className="text-2xl font-bold text-[#222]">{`$${price}`}</p> 
+    <div className= "flex justify-between items-center mt-3 mb-4 pr-2 px-2">
+    <h3 className="font-['Open_Sans',_sans-serif] text-base font-semibold italic text-[#222] mb-1 mt-1">{title}</h3>
+    <p className="text-xl font-bold text-[#222]">{`$${price}`}</p> 
     </div>
-    <Link to={`/detail/${id}`}>
-    <button className="bg-[#4682B4] rounded-xl text-amber-50 ">Ver detalle</button>
+    <Link to={`/detail/${id}`} className="flex justify-center">
+    <button className="bg-chill-blue rounded-3xl text-amber-50  py-2 font-semibold text-center transition duration-150 hover:bg-chill-blue-hover pr-4 pl-4">Ver detalle</button>
     </Link>
     
     </div>
