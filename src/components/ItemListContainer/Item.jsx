@@ -14,7 +14,7 @@ function Item ({ id, title, img, price, description, imgalt, imghover, stock }) 
     <img 
                     src={img} 
                     alt={imgalt} 
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
+                    className={`shadow-md absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
                 />
                 <img 
                     src={imghover} 
@@ -24,7 +24,7 @@ function Item ({ id, title, img, price, description, imgalt, imghover, stock }) 
 
 
     </div> 
-    <div className= "flex justify-between items-center mt-3 mb-4 pr-2 px-2">
+    <div className= "flex justify-between items-center mt-3 mb-4 pr-2 px-2 ">
     <h3 className="font-['Open_Sans',_sans-serif] text-base font-semibold italic text-[#222] mb-1 mt-1">{title}</h3>
     <p className="text-xl font-bold text-[#222]">{`$${price}`}</p> 
     </div>

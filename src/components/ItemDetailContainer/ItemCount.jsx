@@ -18,17 +18,17 @@ function handleDecrement() {
 
     
     return (
-      <div className='flex' >
-        <div className='!flex !items-center !justify-between !border !border-gray-400 !rounded-full w-fit' >
+      <div className='mx-auto md:flex' >
+        <div className='mx-auto md:mx-0 flex items-center justify-between border border-gray-400 rounded-full w-fit md:mr-3 mb-3 md:mb-0' >
 
-            <button onClick={handleDecrement} className='!text-xl !font-bold !px-4 !py-2 !text-gray-700 !hover:bg-gray-100 !rounded-l-full !transition duration-150'> - </button>
+            <button onClick={handleDecrement} className='text-xl font-bold px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-l-full transition duration-150'> - </button>
            
             <span className='text-lg font-semibold px-3'>{count}</span>
        
-            <button onClick={handleIncrement} className='!text-xl !font-bold !px-4 !py-2 !text-gray-700 !hover:bg-gray-100 !rounded-r-full !transition !duration-150'> + </button>
+            <button onClick={handleIncrement} className='text-xl font-bold px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-r-full transition duration-150'> + </button>
           </div>
             <button  onClick={() => { onAdd(count); onAddToast(count); }} 
-                disabled={count === 0} className='!bg-[#4682B4] !rounded-3xl !text-amber-50  !py-2 !font-semibold !text-center !transition !duration-150 !hover:opacity-30 !pr-4 !pl-4'>Agregar al Carrito </button>
+                disabled={count === 0} className='bg-chill-blue rounded-3xl text-amber-50  py-2 font-semibold text-center transition duration-150 hover:opacity-30 pr-4 pl-4'>Agregar al Carrito </button>
         
         </div>
     );

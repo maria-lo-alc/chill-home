@@ -12,7 +12,7 @@ function App() {
 
 
   return (
-    <main id="root" className="font-sans text-chill-dark bg-chill-background">
+    <main id="root" className="font-sans text-chill-dark bg-chill-background max-w-[1440px] mx-auto px-5 lg:px-32">
        <PrimeReactProvider>    
       <CartProvider>
       <BrowserRouter>

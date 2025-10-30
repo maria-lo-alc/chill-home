@@ -1,7 +1,7 @@
 
 
 /** @type {import('tailwindcss').Config} */
-module.exports = { // ¡CAMBIAR 'export default' a 'module.exports'!
+module.exports = { 
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -16,16 +16,7 @@ module.exports = { // ¡CAMBIAR 'export default' a 'module.exports'!
         'sans': ['"Open Sans"', 'sans-serif'], 
         'sans-italic': ['"Open Sans"', 'font-medium', 'italic'],
       },
-      // Definición de tus colores de marca
-      colors: {
-        'chill-dark': '#222', 
-        'chill-background': '#F8F8F8', 
-        'chill-accent-blue': '#4682B4', 
-        'chill-accent-blue-hover': '#3A6A92', 
-        'chill-price': '#666', 
-        'chill-stock-warning': '#D9B8C4', 
-        'temp-fix': '#000000'
-      },
+     
     },
   },
   plugins: [],

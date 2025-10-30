@@ -28,14 +28,14 @@ import { cartContext } from "../../context/cartContext"
         });
     };
     if (product.loading) { return (<h2>Cargando</h2>);}
-    return ( <div className= "flex "> 
-    <span className="w-full aspect-[4/3] mr-8 ">
-    <img className="rounded-xl " src={product.img} alt={product.imgalt} /></span>
+    return ( <div className= "md:flex max-w-5xl p-4  "> 
+    <span className="w-full ">
+    <img className="w-full rounded-xl " src={product.img} alt={product.imgalt} /></span>
     
-    <div className="items-center">
+    <div className="w-full p-8 text-center md:text-left ">
     <h3 className="font-['Open_Sans',_sans-serif] text-xl font-semibold italic text-[#222] mb-1 mt-1">{product.title}</h3>
     <p className="text-2xl font-bold text-[#222]">{`$${product.price}`}</p> 
-    <p style={{ fontSize: "12px", opacity: "0.6"}}>{product.description}</p>
+    <p className="text-xs opacity-60 mb-4">{product.description}</p>
     <Toast ref={toastRef} position="bottom-center" messageclassname= "rounded-xl shadow-lg py-6 text-white"/>
     <ItemCount onAdd={handleOnAdd} onAddToast={handleOnAddToast} max={product.stock} />
     </div>

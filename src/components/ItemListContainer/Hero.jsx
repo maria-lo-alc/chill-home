@@ -14,7 +14,7 @@ function Hero() {
                 <TypingEffect 
                     text="Relax, estás en casa" 
                     typingSpeed={100} 
-                    delay={100} 
+                    delay={0} 
                 />
             </div>
 </div>

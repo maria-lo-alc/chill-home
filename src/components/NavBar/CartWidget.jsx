@@ -7,7 +7,7 @@ export default function CartWidget() {
     const itemsQuantity = countCartItems();
     return (
         <span className=" flex items-center justify-between space-x-2">
-        <img className="basketimg" src="/basket.png" alt="cart"></img>
+        <img className="h-6 lg:h-9" src="/basket.png" alt="cart"></img>
         <div> {itemsQuantity > 0 && itemsQuantity}  </div>
         </span>)   
 }
