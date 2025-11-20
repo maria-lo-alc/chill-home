@@ -1,6 +1,5 @@
 
 import {getProducts, getProductsByCategory} from "../../data/firebase";
-import Hero from "./Hero";
 import Item from "./Item";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
@@ -27,9 +26,8 @@ useEffect( ()=>{
 
     return (
         <section >
-          <Hero />
-          <h1 className="text-white">Nuestros productos</h1>
-            
+          <h1>Aca va el hero</h1> 
+
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               
       {

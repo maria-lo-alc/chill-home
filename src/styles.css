@@ -5,6 +5,7 @@
   max-width: lg= 1440px;
   margin: 0 auto;
   padding: 10px lg=120px;
+  font-family:'Open Sans', sans-serif;
 }
 
 @keyframes blink {
@@ -18,7 +19,7 @@
 }
 
 @theme {
-  --color-chill-delete: #d9b8c4;
+  --color-chill-delete: #8B9A9F;
   --color-chill-blue: #4682b4;
   --color-chill-blue-hover: #3a6a92;
   --color-chill-price: #666;
@@ -28,4 +29,8 @@
 
 .animate-blink {
   animation: blink 1s infinite;
+}
+
+.empty-cart {
+  background-image: url('/public/empty_cart.png');
 }

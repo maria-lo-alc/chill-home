@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import { cartContext } from "../../context/cartContext";
-import { Form, Link } from "react-router";
+import {Link } from "react-router";
 import { createOrder } from "../../data/firebase";
 import FormCheckOut from "./FormCheckout";
 import Order from "./Order";
+import EmptyCart from "./EmptyCart";
 
 function CartContainer() {
   const { cartItems, removeItem, getTotalPrice, clearCart } =
@@ -27,19 +28,16 @@ function CartContainer() {
   }
   if (cartItems.length === 0) {
     return (
-      <div>
-        <h1>Tu carrito esta vacío</h1>
-        <Link to="/">
-          <button>Ir al inicio</button>
-        </Link>
-      </div>
+      <EmptyCart />
     );
   }
 
   return (
     <section className="max-w-4xl  p-4 ">
       <h1 className="font-primary font-bold italic text-2xl mb-2">Carrito</h1>
-      <div className="mb-2 ">
+      <div className="md:flex justify-between">
+        <div className="mb-4 ">
+      <div >
         {cartItems.map((itemInCart) => (
           <div key={itemInCart.id}>
             <div className="flex mb-2 ">
@@ -49,7 +47,10 @@ function CartContainer() {
                 alt={itemInCart.title}
               />
               <div>
-                <h4 className="font-primary font-bold italic ">{itemInCart.title}</h4>
+                <div>
+                  <h4 className="font-primary font-bold italic ">{itemInCart.title}</h4>
+                  </div>
+                
                 <p className="font-primary text-sm">
                   Precio por unidad: ${itemInCart.price}
                 </p>
@@ -57,22 +58,23 @@ function CartContainer() {
                   Cantidad: {itemInCart.quantity}
                 </p>
 
-                <p className="font-primary font-semibold text-md">
+                <p className="font-primary font-bold text-sm">
                   Precio total: ${itemInCart.quantity * itemInCart.price}{" "}
                 </p>
 
-                <button className="font-primary bg-chill-price rounded-3xl text-amber-50  py-1 font-semibold text-center transition duration-150 hover:bg-chill-delete/60 pr-2 pl-2 text-xs" onClick={() => removeItem(itemInCart.id)}>
-                  Eliminar
+                <button className="font-primary bg-chill-price rounded-3xl text-amber-50  py-1 font-semibold text-center transition duration-150 hover:bg-chill-delete pr-2 pl-2 text-xs" onClick={() => removeItem(itemInCart.id)}>
+                  X
                 </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <h4 className="font-primary font-bold ml-30 md:ml-40">Total a pagar $:{getTotalPrice()} </h4>
-      <button className="font-primary bg-chill-price rounded-3xl text-amber-50  py-2 font-semibold text-sm text-center transition duration-150 hover:bg-chill-delete/60 pr-4 pl-4" onClick={clearCart}> Vaciar carrito</button>
+      <h4 className="font-primary font-bold ml-30 md:ml-40">Total a pagar: ${getTotalPrice()} </h4>
+      <button className="bg-gray-500 rounded-3xl text-amber-50  py-2 font-semibold text-center transition duration-150 hover:bg-chill-delete pr-4 pl-4 inline-block self-start" onClick={clearCart}> Vaciar carrito</button>
+      </div>
       <FormCheckOut handleCheckOut={handleCheckOut} />
-      
+      </div>
     </section>
   );
 }

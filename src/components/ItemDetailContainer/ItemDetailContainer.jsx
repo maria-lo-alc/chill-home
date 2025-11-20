@@ -35,7 +35,7 @@ import { cartContext } from "../../context/cartContext"
     <div className="w-full p-8 text-center md:text-left ">
     <h3 className="font-['Open_Sans',_sans-serif] text-xl font-semibold italic text-[#222] mb-1 mt-1">{product.title}</h3>
     <p className="text-2xl font-bold text-[#222]">{`$${product.price}`}</p> 
-    <p className="text-xs opacity-60 mb-4">{product.description}</p>
+    <p className="text-xs opacity-60 mb-4 mt-4">{product.description}</p>
     <Toast ref={toastRef} position="bottom-center" messageclassname= "rounded-xl shadow-lg py-6 text-white"/>
     <ItemCount onAdd={handleOnAdd} onAddToast={handleOnAddToast} max={product.stock} />
     </div>
