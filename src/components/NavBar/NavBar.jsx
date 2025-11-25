@@ -16,7 +16,7 @@ export default function NavBar() {
             
             
             <Link to="/">
-                <img className="h-7" src="/logo.png" alt="logo"></img>
+                <img className="h-6 md:h-7" src="/logo.png" alt="logo"></img>
             </Link>
 
             
@@ -27,7 +27,7 @@ export default function NavBar() {
                 /* LÓGICA DE VISIBILIDAD */
                 ${isOpen ? 'flex' : 'hidden'} 
                 
-                /* ESTILOS DESKTOP (md:) - Aquí sobreescribimos todo lo de móvil */
+                /* ESTILOS DESKTOP */
                 md:flex md:flex-row md:static md:w-auto md:bg-transparent md:shadow-none md:gap-8 md:py-0
             `}>
                 <Link to="/category/Salon" className={linkStyle} onClick={() => setIsOpen(false)}>Salon</Link>

@@ -32,5 +32,9 @@
 }
 
 .empty-cart {
-  background-image: url('/public/empty_cart.png');
+  background-image: url('/empty_cart.png');
+}
+
+.not-found {
+  background-image: url('/ups.png');
 }

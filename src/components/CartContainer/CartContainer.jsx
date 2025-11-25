@@ -59,7 +59,7 @@ function CartContainer() {
                 </p>
 
                 <p className="font-primary font-bold text-sm">
-                  Precio total: ${itemInCart.quantity * itemInCart.price}{" "}
+                  Precio total: ${(itemInCart.quantity * itemInCart.price).toFixed(2)}{" "}
                 </p>
 
                 <button className="font-primary bg-chill-price rounded-3xl text-amber-50  py-1 font-semibold text-center transition duration-150 hover:bg-chill-delete pr-2 pl-2 text-xs" onClick={() => removeItem(itemInCart.id)}>
@@ -70,7 +70,7 @@ function CartContainer() {
           </div>
         ))}
       </div>
-      <h4 className="font-primary font-bold ml-30 md:ml-40">Total a pagar: ${getTotalPrice()} </h4>
+      <h4 className="font-primary font-bold ml-30 md:ml-40">Total a pagar: ${getTotalPrice().toFixed(2)} </h4>
       <button className="bg-gray-500 rounded-3xl text-amber-50  py-2 font-semibold text-center transition duration-150 hover:bg-chill-delete pr-4 pl-4 inline-block self-start" onClick={clearCart}> Vaciar carrito</button>
       </div>
       <FormCheckOut handleCheckOut={handleCheckOut} />

@@ -23,8 +23,9 @@ function handleInputChange (event) {
     setFormData (newFormData);
 }
     return (
-        <div className="bg-gray-100 p-4 rounded-lg  mb-4 ">
-            <h2 className="font-primary font-bold italic mb-4 text-md">Datos Personales</h2>
+        <div >
+            <div className="bg-gray-100 p-4 rounded-lg  mb-4 ">
+                <h2 className="font-primary font-bold italic mb-4 text-md">Datos Personales</h2>
              <form className="flex flex-col  gap-3 mr-3" onSubmit={handleSubmit} >
             <label className="font-primary flex gap-2 text-md" > Nombre
                 <input className="bg-gray-50 pl-2 rounded-xl min-w-3" onChange={handleInputChange} name= "userName" required type= "text" value={formData.userName}  placeholder= "Laura Gonzalez"/>
@@ -40,7 +41,8 @@ function handleInputChange (event) {
             <button className="bg-chill-blue rounded-3xl text-amber-50  py-2 font-semibold text-center transition duration-150 hover:bg-chill-blue-hover pr-4 pl-4 inline-block self-start" >Comprar</button>
             </div>
             
-        </form>
+        </form></div>
+            
         </div>
        
     )
